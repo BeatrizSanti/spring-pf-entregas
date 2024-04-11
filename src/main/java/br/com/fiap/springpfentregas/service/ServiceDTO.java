@@ -1,5 +1,8 @@
 package br.com.fiap.springpfentregas.service;
 
+import br.com.fiap.springpfentregas.entity.Pessoa;
+import org.springframework.data.domain.Example;
+
 import java.util.Collection;
 
 
@@ -23,6 +26,8 @@ public interface ServiceDTO<Entity, Request, Response> {
     Response toResponse(Entity entity);
 
     Collection<Entity> findAll();
+
+    Collection<Entity> findAll(Example<Entity> example);
 
     Entity findById(Long id);
 

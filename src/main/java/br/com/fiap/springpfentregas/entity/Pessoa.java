@@ -15,7 +15,9 @@ import java.time.LocalDate;
 
 
 @Entity
-@Table(name = "TB_PESSOA")
+@Table(name = "TB_PESSOA", uniqueConstraints = {
+        @UniqueConstraint( name = "UK_TB_PESSOA_EMAIL", columnNames = {"EMAIL"})
+})
 public class Pessoa {
 
     @Id
@@ -30,6 +32,7 @@ public class Pessoa {
     @Column(name = "DT_NASCIMENTO")
     private LocalDate nascimento;
 
+    @Column(name = "EMAIL")
     private String email;
 
 }

@@ -5,9 +5,11 @@ import br.com.fiap.springpfentregas.dto.response.PassageiroResponse;
 import br.com.fiap.springpfentregas.entity.Passageiro;
 import br.com.fiap.springpfentregas.repository.PassageiroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 
 @Service
@@ -43,6 +45,13 @@ public class PassageiroService implements ServiceDTO<Passageiro, PassageiroReque
     @Override
     public Collection<Passageiro> findAll() {
         return repo.findAll();
+    }
+
+    @Override
+    public Collection<Passageiro> findAll(Example<Passageiro> example) {
+
+        //TODO: Preciso implementar
+        return List.of();
     }
 
     @Override

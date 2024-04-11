@@ -6,6 +6,7 @@ import br.com.fiap.springpfentregas.entity.Endereco;
 import br.com.fiap.springpfentregas.entity.Pessoa;
 import br.com.fiap.springpfentregas.repository.EnderecoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -53,6 +54,13 @@ public class EnderecoService implements ServiceDTO<Endereco, EnderecoRequest, En
     @Override
     public Collection<Endereco> findAll() {
         return repo.findAll();
+    }
+
+    @Override
+    public Collection<Endereco> findAll(Example<Endereco> example) {
+        //TODO: Preciso implementar
+
+        return List.of();
     }
 
     @Override

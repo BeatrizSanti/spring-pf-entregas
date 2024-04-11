@@ -5,6 +5,7 @@ import br.com.fiap.springpfentregas.dto.response.PessoaResponse;
 import br.com.fiap.springpfentregas.entity.Pessoa;
 import br.com.fiap.springpfentregas.repository.PessoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -39,6 +40,11 @@ public class PessoaService implements ServiceDTO<Pessoa, PessoaRequest, PessoaRe
     @Override
     public Collection<Pessoa> findAll() {
         return repo.findAll();
+    }
+
+    @Override
+    public Collection<Pessoa> findAll(Example<Pessoa> example) {
+        return repo.findAll( example );
     }
 
     @Override

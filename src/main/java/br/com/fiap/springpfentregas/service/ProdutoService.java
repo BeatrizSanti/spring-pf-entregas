@@ -5,11 +5,13 @@ import br.com.fiap.springpfentregas.dto.response.ProdutoResponse;
 import br.com.fiap.springpfentregas.entity.Produto;
 import br.com.fiap.springpfentregas.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.function.ServerRequest;
 import org.springframework.web.servlet.function.ServerResponse;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -53,6 +55,13 @@ public class ProdutoService implements ServiceDTO<Produto, ProdutoRequest, Produ
     @Override
     public Collection<Produto> findAll() {
         return repo.findAll();
+    }
+
+    @Override
+    public Collection<Produto> findAll(Example<Produto> example) {
+
+        //TODO: Preciso implementar
+        return List.of();
     }
 
     @Override

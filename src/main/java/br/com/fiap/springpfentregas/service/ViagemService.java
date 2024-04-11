@@ -7,6 +7,7 @@ import br.com.fiap.springpfentregas.entity.Produto;
 import br.com.fiap.springpfentregas.entity.Viagem;
 import br.com.fiap.springpfentregas.repository.ViagemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -86,6 +87,12 @@ public class ViagemService implements ServiceDTO<Viagem, ViagemRequest, ViagemRe
 
     @Override
     public Collection<Viagem> findAll() {
+        return List.of();
+    }
+
+    @Override
+    public Collection<Viagem> findAll(Example<Viagem> example) {
+        //TODO: Preciso implementar
         return List.of();
     }
 
